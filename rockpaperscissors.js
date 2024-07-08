@@ -22,6 +22,7 @@ function getHumanChoice(){
 function playRound(humanChoice, computerChoice){
     if(humanChoice == computerChoice) {
         console.log(humanChoice + " vs. " + computerChoice + " It's a draw")
+        return
     }
     switch(humanChoice) {
         case "Rock":
@@ -61,11 +62,25 @@ function printHumanWin(humanChoice, computerChoice){
 }
 
 function printHumanLose(humanChoice, computerChoice){
-    console.log(computerChoice + " beats " + humanChoice + " You Lose...")
+    console.log(humanChoice + " loses to " + computerChoice + " You Lose...")
 }
 // console.log(getHumanChoice())
 
+function playGame(){
+    for(i = 0; i < 5; i++){
+        playRound(getHumanChoice(), getComputerChoice())
+    }
+
+    if(humanScore > computerScore){
+        console.log("Congrats human. You are victorious with a score of " + humanScore + " to " + computerScore)
+    }
+    else if(computerScore > humanScore){
+        console.log("Humans have been proven obsolete. Defeat was inevitable. You have lost with a score of " + humanScore + " to " + computerScore)
+    } else {
+        console.log("A draw has been reached with scores of " + humanScore + " to " + computerScore)
+    }
+}
+
 let humanScore = 0
 let computerScore = 0
-
-playRound(getHumanChoice(), getComputerChoice())
+playGame()
