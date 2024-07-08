@@ -9,9 +9,9 @@ function getComputerChoice(){
     return "Scissors"
 }
 
-for(i = 0; i < 10; i++){
-    console.log(getComputerChoice())
-}
+// for(i = 0; i < 10; i++){
+//     console.log(getComputerChoice())
+// }
 
 function getHumanChoice(){
     let rawInput = prompt("Enter Rock, Paper, or Scissors")
@@ -19,4 +19,4 @@ function getHumanChoice(){
     return lowerInput.at(0).toUpperCase() + lowerInput.slice(1)
 }
 
-console.log(getHumanChoice())
+// console.log(getHumanChoice())
